@@ -34,4 +34,7 @@ export class ProductEntity implements Product {
 
   @ApiProperty()
   updatedAt: Date;
+
+  @ApiProperty({ required: false, nullable: true })
+  categoryId: number | null;
 }
