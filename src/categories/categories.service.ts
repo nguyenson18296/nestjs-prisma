@@ -16,11 +16,24 @@ export class CategoriesService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} category`;
+    return this.prisma.category.findUnique({
+      where: { id },
+    })
+  }
+
+  findByCategoryId(id: number) {
+    return this.prisma.product.findMany({
+      where: {
+        categoryId: +id
+      },
+    })
   }
 
   update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return `This action updates a #${id} category`;
+    return this.prisma.category.update({
+      where: { id },
+      data: updateCategoryDto
+    })
   }
 
   remove(id: number) {
