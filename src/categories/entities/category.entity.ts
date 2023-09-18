@@ -16,4 +16,7 @@ export class CategoryEntity implements Category {
 
   @ApiProperty()
   description: string;
+
+  @ApiProperty({ required: false })
+  image: string;
 }

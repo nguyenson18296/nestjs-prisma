@@ -40,4 +40,9 @@ export class CreateProductDto {
   @IsBoolean()
   @ApiProperty({ required: false, default: false })
   published?: boolean = false;
+
+  @IsNumber()
+  @IsOptional()
+  @ApiProperty()
+  categoryId: number;
 }
