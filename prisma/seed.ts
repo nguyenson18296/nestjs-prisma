@@ -18,7 +18,7 @@ async function main() {
     create: {
       email: 'sabin@adams.com',
       name: 'Sabin Adams',
-      password: 'password-sabin',
+      password: passwordSabin,
     },
   });
 
@@ -30,7 +30,7 @@ async function main() {
     create: {
       email: 'alex@ruheni.com',
       name: 'Alex Ruheni',
-      password: 'password-alex',
+      password: passwordAlex,
     },
   });
 
@@ -66,7 +66,7 @@ async function main() {
     where: { title: 'Lorem ipsum dolor sit amet' },
     update: {},
     create: {
-      title: 'Lorem ipsum dolor sit amet',
+      title: 'Camera',
       description:
         'consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     },
@@ -76,7 +76,7 @@ async function main() {
     where: { title: 'Cursus euismod quis viverra' },
     update: {},
     create: {
-      title: 'Cursus euismod quis viverra',
+      title: 'Phone',
       description:
         'Ac tincidunt vitae semper quis lectus nulla at volutpat. Nisl condimentum id venenatis a condimentum',
     },

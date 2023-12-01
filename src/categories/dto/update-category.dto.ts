@@ -13,4 +13,9 @@ export class UpdateCategoryDto extends PartialType(CreateCategoryDto) {
   @IsOptional()
   @ApiProperty({ required: false })
   description?: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
+  image: string;
 }
