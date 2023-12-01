@@ -8,10 +8,11 @@ import {
   Delete,
   ParseIntPipe,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
+import { CategoryEntity } from './entities/category.entity';
 
 @Controller('categories')
 @ApiTags('categories')
@@ -24,6 +25,7 @@ export class CategoriesController {
   }
 
   @Get()
+  @ApiOkResponse({ type: CategoryEntity, isArray: true })
   findAll() {
     return this.categoriesService.findAll();
   }
@@ -39,11 +41,13 @@ export class CategoriesController {
   }
 
   @Patch(':id')
+  @ApiOkResponse({ type: CategoryEntity })
   update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() updateCategoryDto: UpdateCategoryDto,
   ) {
-    return this.categoriesService.update(+id, updateCategoryDto);
+    console.log("updateCategoryDto", updateCategoryDto);
+    return this.categoriesService.update(id, updateCategoryDto);
   }
 
   @Delete(':id')

@@ -59,6 +59,7 @@ export class UploadController {
   ) {
     return {
       path: file.path,
+      destination: file.destination,
       success: true,
     };
   }

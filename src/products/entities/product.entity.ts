@@ -24,6 +24,12 @@ export class ProductEntity implements Product {
   slug: string | null;
 
   @ApiProperty({ required: false, nullable: true })
+  thumbnail_path: string | null;
+
+  @ApiProperty({ required: false, nullable: true })
+  images: string[];
+
+  @ApiProperty({ required: false, nullable: true })
   state: string;
 
   @ApiProperty({ required: false, default: false, nullable: true })
